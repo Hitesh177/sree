@@ -34,6 +34,5 @@ pnpm-debug.log*
 # Misc
 *.local
 
-# Cloudflare Worker (not deployed — exclude its deps)
-worker/.dev.vars
-worker/node_modules
+# Cloudflare Worker (not deployed)
+worker/
