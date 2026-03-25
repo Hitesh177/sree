@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Monograph';
+  src: url('/fonts/monograph-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FDFAF4;
+    color: #1C1008;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #9B7A2A;
+    color: #FDFAF4;
+  }
+}
+
+@layer components {
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    @apply font-heading font-light leading-tight tracking-tight;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    @apply inline-block bg-art-ink text-art-cream font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-art-dark-2 transition-colors duration-300;
+  }
+
+  .btn-gold {
+    @apply inline-block bg-art-gold text-art-cream font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-art-gold-lt transition-colors duration-300;
+  }
+
+  /* Lotus-texture button — Indian sage green stucco with cream text */
+  .btn-lotus {
+    @apply inline-block font-sans font-medium px-8 py-3.5 tracking-[0.15em] uppercase text-xs relative overflow-hidden;
+    background-image: url('/btn-lotus.png');
+    background-size: 180% auto;
+    background-position: center 25%;
+    color: #F5EDD8;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: background-position 0.4s ease, filter 0.3s ease;
+  }
+  .btn-lotus:hover {
+    background-position: center 35%;
+    filter: brightness(1.08);
+  }
+
+  .btn-outline {
+    @apply inline-block border border-art-ink text-art-ink font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-art-ink hover:text-art-cream transition-colors duration-300;
+  }
+
+  .btn-outline-gold {
+    @apply inline-block border border-art-gold text-art-gold font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-art-gold hover:text-art-cream transition-colors duration-300;
+  }
+
+  .btn-ghost {
+    @apply inline-block text-art-ink-2 font-sans font-medium
+           px-2 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:text-art-ink transition-colors duration-300
+           border-b border-art-border hover:border-art-ink;
+  }
+
+  /* Legacy compat */
+  .btn-maroon {
+    @apply inline-block bg-art-maroon text-art-cream font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-red-900 transition-colors duration-300;
+  }
+
+  /* ── EDITORIAL SECTION TAG ── */
+  .section-tag {
+    @apply flex items-center gap-3 mb-6;
+  }
+
+  .section-tag::before {
+    content: '';
+    @apply block w-8 h-px bg-art-gold;
+  }
+
+  /* ── GOLD DIVIDER ── */
+  .gold-divider {
+    @apply w-full h-px bg-art-border my-2;
+  }
+
+  /* ── CARD ── */
+  .art-card {
+    @apply bg-art-bg-card border border-art-border transition-all duration-300
+           hover:border-art-gold/40;
+  }
+
+  /* ── CHARMINAR ARCH CLIP (pointed Mughal arch) ── */
+  .mughal-arch {
+    clip-path: polygon(0% 100%, 0% 22%, 10% 14%, 20% 8%, 30% 4%, 50% 0%, 70% 4%, 80% 8%, 90% 14%, 100% 22%, 100% 100%);
+  }
+
+  /* ── BIDRI PANEL (matte black + silver text) ── */
+  .bidri-panel {
+    background: #0A0805;
+    color: #E0D8C8;
+    border-left: 2px solid #9B7A2A33;
+  }
+
+  /* ── PEACOCK TEAL ACCENT ── */
+  .teal-rule::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: #9B7A2A;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+  }
+
+  .text-shadow-subtle {
+    text-shadow: 0 2px 40px rgba(28, 16, 8, 0.08);
+  }
+
+  /* Legacy compat */
+  .btn-outline-gold {
+    @apply inline-block border border-art-gold text-art-gold font-sans font-medium
+           px-8 py-3.5 tracking-[0.15em] uppercase text-xs
+           hover:bg-art-gold hover:text-art-cream transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .text-balance { text-wrap: balance; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FDFAF4; }
+::-webkit-scrollbar-thumb { background: #DDD3BB; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9B7A2A; }
+
+/* ── DROP CAP — for Our Story first paragraph ── */
+.drop-cap-gold::first-letter {
+  float: left;
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 0.72;
+  padding-right: 0.14em;
+  padding-top: 0.06em;
+  color: #C4A04A;
+}
+
+/* ── CROSS RULE (× ——— ×) ── */
+.cross-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+}
+.cross-rule::before,
+.cross-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+/* ── LEFT-BORDER QUOTE ── */
+.quote-left {
+  border-left: 1px solid #9B7A2A55;
+  padding-left: 1.25rem;
+}
+
+/* ── CURSIVE ACCENT ── */
+.cursive-accent {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ── BARE FORM INPUTS (Contact page) ── */
+.bare-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #C4B89055;
+  padding: 10px 0 10px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  color: #1A0E05;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.bare-input::placeholder { color: #9B8A6A; opacity: 0.7; }
+.bare-input:focus { border-bottom-color: #9B7A2A; }

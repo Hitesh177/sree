@@ -1,0 +1,13 @@
+name = "rani-chatbot"
+main = "index.js"
+compatibility_date = "2024-09-23"
+
+# Workers free plan is more than enough for a restaurant chatbot.
+# To deploy: run `npx wrangler deploy` from the /worker directory.
+
+# After deploying, set your Gemini API key as a secret (never commit it):
+#   npx wrangler secret put GEMINI_API_KEY
+# Paste your key when prompted. It stays encrypted in Cloudflare — never in code.
+
+# Optional: restrict to your production domain in production.
+# Uncomment and update the CORS origin in index.js line 37 when going live.
