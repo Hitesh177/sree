@@ -742,7 +742,7 @@ export default function Gallery() {
             {zh ? '在Instagram分享您的用餐體驗，加入我們的故事' : 'Share your dining experience and be part of our story'}
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/sreeindiapalace_taiwan"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase px-8 py-4 border border-[#9B7A2A]/60 text-[#C4A04A] hover:bg-[#9B7A2A]/20 transition-colors duration-300"
