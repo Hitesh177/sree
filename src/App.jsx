@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import { AnimatePresence } from 'framer-motion'
 import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/Navbar'
@@ -53,6 +54,7 @@ export default function App() {
           <CursorFollower />
           <PageLoader />
         </div>
+        <Analytics />
       </BrowserRouter>
     </LanguageProvider>
   )
