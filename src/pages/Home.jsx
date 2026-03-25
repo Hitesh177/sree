@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 import GoldDivider from '../components/GoldDivider'
 import BiryaniScrollSequence from '../components/BiryaniScrollSequence'
+import FAQSection from '../components/FAQSection'
 import { BOOKING_URL, UBEREATS_PICKUP_URL, UBEREATS_DELIVERY_URL } from '../constants'
 
 const fadeUp = {
@@ -504,6 +505,7 @@ export default function Home() {
         </div>
       </section>
 
+      <FAQSection />
     </motion.div>
   )
 }
